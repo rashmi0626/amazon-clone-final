@@ -70,9 +70,9 @@ const defaultProducts = [
 
 let products = JSON.parse(localStorage.getItem("shopSmartProducts"))
   || defaultProducts;
-  if (!localStorage.getItem("shopSmartProducts")) {
+  if (!localStorage.getItem("AmazonProducts")) {
     localStorage.setItem(
-        "shopSmartProducts",
+        "AmazonProducts",
         JSON.stringify(products)
     );
 }
@@ -137,7 +137,7 @@ function displayProducts(items) {
 // ADVANCED SHOPPING CART
 
 let cart = JSON.parse(
-    localStorage.getItem("shopSmartCart") || "[]"
+    localStorage.getItem("AmazonCart") || "[]"
 );
 
 // ADD PRODUCT TO CART
@@ -149,7 +149,7 @@ function addToCart(productId) {
         return;
     }
 
-    let cart = JSON.parse(localStorage.getItem("shopSmartCart")) || [];
+    let cart = JSON.parse(localStorage.getItem("AmazonCart")) || [];
 
     const cartItem = cart.find(item => item.id === productId);
     const currentQuantity = cartItem ? cartItem.quantity : 0;
@@ -165,7 +165,7 @@ function addToCart(productId) {
         cart.push({ ...product, quantity: 1 });
     }
 
-    localStorage.setItem("shopSmartCart", JSON.stringify(cart));
+    localStorage.setItem("AmazonCart", JSON.stringify(cart));
 
     alert("Product added to cart!");
 }
@@ -442,7 +442,7 @@ displayProducts(products);
 
 // Load saved wishlist
 let wishlist = JSON.parse(
-    localStorage.getItem("shopSmartWishlist")
+    localStorage.getItem("AmazonWishlist")
 ) || [];
 
 
@@ -450,7 +450,7 @@ let wishlist = JSON.parse(
 
 function saveWishlist() {
     localStorage.setItem(
-        "shopSmartWishlist",
+        "AmazonWishlist",
         JSON.stringify(wishlist)
     );
 }
@@ -581,7 +581,7 @@ function openProductDetails(id, event) {
 req.accepts(function openProductDetails(id) {
     window.location.href = `product-details.html?id=${id}`;
 });const currentUser = JSON.parse(
-    localStorage.getItem("shopSmartCurrentUser")
+    localStorage.getItem("AmazonCurrentUser")
 );
 
 if (currentUser) {
@@ -593,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logoutBtn = document.getElementById("logoutBtn");
 
     const currentUser = JSON.parse(
-        localStorage.getItem("shopSmartCurrentUser")
+        localStorage.getItem("AmazonCurrentUser")
     );
 
     if (currentUser) {
@@ -604,7 +604,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     logoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("shopSmartCurrentUser");
+        localStorage.removeItem("AmazonCurrentUser");
         window.location.reload();
     });
 
