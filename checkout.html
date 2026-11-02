@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | ShopSmart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="checkout-page">
+
+    <header class="checkout-header">
+        <a href="index.html">Shop<span>Smart</span></a>
+        <h2>Secure Checkout</h2>
+    </header>
+
+    <main class="checkout-container">
+
+        <section class="checkout-form">
+
+            <h2>Delivery Details</h2>
+
+            <form id="checkoutForm">
+
+                <label>Full Name</label>
+                <input type="text" id="customerName"
+                    placeholder="Enter your name" required>
+
+                <label>Email Address</label>
+                <input type="email" id="customerEmail"
+                    placeholder="Enter your email" required>
+
+                <label>Mobile Number</label>
+                <input type="tel" id="customerPhone"
+                    placeholder="Enter 10-digit mobile number"
+                    pattern="[0-9]{10}" required>
+
+                <label>House / Street Address</label>
+                <textarea id="customerAddress"
+                    placeholder="Enter delivery address"
+                    required></textarea>
+
+                <label>City</label>
+                <input type="text" id="customerCity"
+                    placeholder="Enter city" required>
+
+                <label>PIN Code</label>
+                <input type="text" id="customerPin"
+                    placeholder="6-digit PIN code"
+                    pattern="[0-9]{6}" required>
+
+                <h2>Payment Method</h2>
+
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="payment"
+                            value="Cash on Delivery" checked>
+                        Cash on Delivery
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="payment"
+                            value="Demo Online Payment">
+                        Demo Online Payment
+                    </label>
+                </div>
+
+                <p class="demo-note">
+                    Online payment is simulated. No real payment will be made.
+                </p>
+
+                <button type="submit" class="place-order-btn">
+                    Place Your Order
+                </button>
+
+                <p id="checkoutMessage"></p>
+
+            </form>
+
+        </section>
+
+        <aside class="order-summary">
+
+            <h2>Your Order Summary</h2>
+        <div class="delivery-estimate">
+            <h3>📦 Estimated Delivery</h3>
+            <p id="deliveryDate">Calculating delivery...</p>
+            <small>Estimated arrival: 9:00 AM – 6:00 PM</small>
+        </div>
+            <div id="checkoutItems"></div>
+
+            <hr>
+
+            <div class="checkout-total-row">
+                <span>Subtotal</span>
+                <strong id="checkoutSubtotal">₹0</strong>
+            </div>
+
+            <div class="checkout-total-row">
+                <span>Delivery</span>
+                <strong id="checkoutDelivery">₹0</strong>
+            </div>
+
+            <hr>
+
+            <div class="checkout-total-row final-total">
+                <span>Grand Total</span>
+                <strong id="checkoutTotal">₹0</strong>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | ShopSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-container">
+
+        <a href="index.html" class="auth-logo"> amazon </a>
+
+        <div class="auth-box">
+
+            <h2>Create Account</h2>
+            <p>Join amazon today!</p>
+
+            <form id="signupForm">
+
+                <label>Full Name</label>
+                <input type="text" id="signupName"
+                       placeholder="Enter your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" id="signupEmail"
+                       placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <div class="password-box">
+                    <input type="password" id="signupPassword"
+                           placeholder="Create password" required minlength="8">
+                    <button type="button"
+                            onclick="togglePassword('signupPassword', this)">
+                        Show
+                    </button>
+                </div>
+
+                <label>Confirm Password</label>
+                <div class="password-box">
+                    <input type="password" id="confirmPassword"
+                           placeholder="Confirm password" required>
+                    <button type="button"
+                            onclick="togglePassword('confirmPassword', this)">
+                        Show
+                    </button>
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    Create Account
+                </button>
+
+                <p id="signupMessage" class="auth-message"></p>
+
+            </form>
+
+            <div class="auth-bottom">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

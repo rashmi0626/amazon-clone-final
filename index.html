@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart | Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        
+<!-- Amazon Style Logo -->
+<div class="brand-section">
+
+    <div class="amazon-logo">
+        amazon
+        <span class="amazon-smile"></span>
+    </div>
+
+    <div class="delivery-location">
+        <span class="location-icon">📍</span>
+
+        <div>
+            <small>Deliver to</small>
+            <h4>Delhi</h4>
+        </div>
+    </div>
+
+</div>
+<div class="search">
+  <select id="category">
+    <option>All</option>
+    <option>Electronics</option>
+    <option>Fashion</option>
+    <option>Home</option>
+  </select>
+
+            <input type="text" id="searchInput"
+                   placeholder="Search amazon">
+
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+    <select id="sortBy" onchange="searchProducts()">
+    <option value="default">Sort By</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+</select>
+<div class="nav-links">
+
+    <a href="login.html" id="userGreeting">Hello, Sign in</a>
+<button id="logoutBtn" style="display:none;">Logout</button>
+
+    <a href="signup.html" id="signupLink"> Create Account</a>
+
+   
+    <button id="logoutButton"
+            onclick="logoutUser()"
+            style="display:none;">
+        Logout
+    </button>
+
+<a href="orders.html">📦 My Orders</a>
+<a href="#wishlist">❤️ Wishlist</a>
+ <a href="#cart">🛒 Cart</a>
+
+</div>
+
+</div>
+
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">☰ All</a>
+        <a href="#products">Today's Deals</a>
+        <a href="#products">Electronics</a>
+        <a href="#products">Fashion</a>
+        <a href="#products">Home & Kitchen</a>
+        <a href="#products">Best Sellers</a>
+    </nav>
+
+   
+<!-- Hero Banner -->
+
+<!-- Promotional Image Slider -->
+
+<section class="slider">
+
+    <div class="slide active">
+        <div class="slide-content">
+            <h1>Fashion Finds Under ₹999</h1>
+            <p>Discover the latest fashion trends.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200" alt="Fashion">
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h1>Upgrade Your Smart Lifestyle</h1>
+            <p>Explore amazing electronics.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1200" alt="Electronics">
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <h1>Style Meets Comfort</h1>
+            <p>Discover your favourite collection.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200" alt="Fashion store">
+    </div>
+
+    <button class="arrow prev" onclick="changeSlide(-1)">❮</button>
+    <button class="arrow next" onclick="changeSlide(1)">❯</button>
+
+    <div class="dots">
+        <button class="dot active" onclick="goToSlide(0)"></button>
+        <button class="dot" onclick="goToSlide(1)"></button>
+        <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+
+</section>
+
+    <div class="slide">
+        <div class="slide-content">
+            <span>TECHNOLOGY DEALS</span>
+            <h1>Upgrade Your<br>Smart Lifestyle</h1>
+            <p>Explore amazing electronics offers.</p>
+            <a href="#products" class="slide-btn">Explore Now</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1200"
+             alt="Electronics collection">
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <span>NEW COLLECTION</span>
+            <h1>Style Meets<br>Comfort</h1>
+            <p>Find your favourite everyday essentials.</p>
+            <a href="#products" class="slide-btn">Discover More</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200"
+             alt="Fashion store">
+    </div>
+
+    
+</section>
+
+
+<!-- Categories -->
+<section class="category-section">
+    <h2>Shop By Category</h2>
+
+    <div class="category-container">
+
+        <div class="category-card">
+            <img src="appliances.jpg" alt="Electronics">
+            <h3>Electronics</h3>
+            <a href="#products">Shop Now</a>
+        </div>
+
+        <div class="category-card">
+            <img src="fashion.jpg" alt="Fashion">
+            <h3>Fashion</h3>
+            <a href="#products">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="homedecor.jpg" alt="Home">
+            <h3>Home Decor</h3>
+            <a href="#products">Explore</a>
+        </div>
+
+        <div class="category-card">
+            <img src="beauty.jpg" alt="Beauty">
+            <h3>Beauty</h3>
+            <a href="#products">Explore</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Today's Deals -->
+<section class="deals-section">
+    <h2>🔥 Today's Best Deals</h2>
+    <p>Find your favourite products at exciting prices!</p>
+    <a href="#products" class="deal-btn">View All Deals</a>
+</section>
+
+
+  
+<!-- Product Listing Section -->
+<section id="products" class="products-section">
+
+    <h2>Popular Products</h2>
+
+    <!-- Product Filters -->
+    <div class="product-controls">
+
+        <select id="filterCategory" onchange="filterProducts()">
+            <option value="All">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Home">Home</option>
+        </select>
+
+        <select id="sortProducts" onchange="filterProducts()">
+            <option value="default">Sort By</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+        </select>
+
+    </div>
+
+    <div id="productContainer" class="product-container"></div>
+
+</section>
+
+
+<!-- SHOPSMART WISHLIST -->
+
+<section id="wishlist" class="wishlist-section">
+
+    <h2>❤️ My Wishlist</h2>
+
+    <div id="wishlistItems" class="wishlist-container">
+
+        <p>Your wishlist is empty!</p>
+
+    </div>
+
+</section>
+
+    <!-- Cart Section -->
+   
+<!-- ADVANCED SHOPPING CART -->
+
+<section id="cart" class="cart-section">
+
+    <h2>🛒 Your Shopping Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-summary">
+
+        <h3>Price Details</h3>
+
+        <div class="summary-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">₹0</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Delivery Charges:</span>
+            <span id="delivery">₹0</span>
+        </div>
+
+        <hr>
+
+        <div class="summary-row grand-total">
+            <strong>Grand Total:</strong>
+            <strong id="total">₹0</strong>
+        </div>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <h3>amazon</h3>
+        <p>Your smart destination for online shopping.</p>
+        <p>© 2026 amazon. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

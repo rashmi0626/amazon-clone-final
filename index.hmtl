@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart | Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">Shop<span>Smart</span></div>
+
+        <div class="location">
+            <small>Deliver to</small>
+            <h4>India</h4>
+        </div>
+
+        <div class="search">
+            <select id="category">
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home</option>
+              </select>
+
+            <input type="text" id="searchInput"
+                   placeholder="Search ShopSmart">
+
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Hello, Sign in</a>
+            <a href="#">Returns & Orders</a>
+            <a href="#cart">🛒 Cart</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">☰ All</a>
+        <a href="#products">Today's Deals</a>
+        <a href="#products">Electronics</a>
+        <a href="#products">Fashion</a>
+        <a href="#products">Home & Kitchen</a>
+        <a href="#products">Best Sellers</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Welcome to ShopSmart</h1>
+            <p>Discover amazing products at amazing prices.</p>
+            <a href="#products" class="shop-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2>Popular Products</h2>
+        <div id="productContainer" class="product-container"></div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <h3 id="total">Total: ₹0</h3>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>ShopSmart</h3>
+        <p>Your smart destination for online shopping.</p>
+        <p>© 2026 ShopSmart. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
