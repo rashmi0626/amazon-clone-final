@@ -3,7 +3,7 @@
 // LOAD CART DATA
 
 const checkoutCart = JSON.parse(
-    sessionStorage.getItem("AmazonCheckoutCart") || "[]"
+    sessionStorage.getItem("checkoutCart") || "[]"
 );
 
 const checkoutItems = document.getElementById("checkoutItems");
@@ -171,13 +171,13 @@ const order = {
 };
 
 const savedOrders = JSON.parse(
-    localStorage.getItem("shopSmartOrders") || "[]"
+    localStorage.getItem("AmazonOrders") || "[]"
 );
 
 savedOrders.unshift(order);
 
 localStorage.setItem(
-    "shopSmartOrders",
+    "AmazonOrders",
     JSON.stringify(savedOrders)
 );
 
@@ -233,7 +233,7 @@ localStorage.setItem(
     `;
 
     // Clear checkout cart after demo order
-    sessionStorage.removeItem("shopSmartCheckoutCart");
+    sessionStorage.removeItem("checkoutCart");
 
 });
 
