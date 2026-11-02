@@ -3,7 +3,7 @@
 // LOAD CART DATA
 
 const checkoutCart = JSON.parse(
-    sessionStorage.getItem("shopSmartCheckoutCart") || "[]"
+    sessionStorage.getItem("AmazonCheckoutCart") || "[]"
 );
 
 const checkoutItems = document.getElementById("checkoutItems");
