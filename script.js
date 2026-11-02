@@ -262,15 +262,16 @@ function updateQuantity(id, change) {
     if (item.quantity <= 0) {
         removeFromCart(id);
     } else {
-        displayCart();
-    }
+    localStorage.setItem("AmazonCart", JSON.stringify(cart));
+    displayCart();
 }
 
+
 // REMOVE PRODUCT
-
 function removeFromCart(id) {
-
     cart = cart.filter(item => item.id !== id);
+
+    localStorage.setItem("AmazonCart", JSON.stringify(cart));
 
     displayCart();
 }
